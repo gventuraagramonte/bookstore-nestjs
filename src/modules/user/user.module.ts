@@ -5,10 +5,11 @@ import { UserService } from './user.service';
 import { SharedModule } from '../../shared/mapper.module';
 import { UserController } from './user.controller';
 import { AuthModule } from '../auth/auth.module';
+import { RoleRepository } from '../role/role.respository';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UserRepository]),
+    TypeOrmModule.forFeature([UserRepository, RoleRepository]),
     SharedModule,
     AuthModule,
   ],
